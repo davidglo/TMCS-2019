@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Simulation Name="H1N1_3NSS">
+  <SystemProperties>
+    <SimulationBoundary SimulationBox="20,20,20" PeriodicBoundary="true"/>
+    <Thermostat Type="BerendsenThermostat" EquilibriumTemperature="300" BerendsenCoupling="0.008" />
+    <Integrator Type="Verlet" TimeStep="0.001" />
+  </SystemProperties>
+  <Topology>
+    <Templates>
+      <Residue Name="H1N1_3NSS">
+	<File Centre="true" Path="PATH TO PDB TO BE ADDED HERE"/>
+       <ForceFields>
+          <InteractiveGaussianForceField GradientScaleFactor="500" HarmonicForce="true" ReinitializeVelocities="true" />
+          <OpenMMForceField SystemFile="PATH TO XML TO BE ADDED HERE" Centre="true">
+          </OpenMMForceField>
+        </ForceFields>
+      </Residue>
+    </Templates>
+    <Spawners>
+      <InstanceSpawner Name="H1N1_3NSS" Template="H1N1_3NSS" Count="1" />
+    </Spawners>
+  </Topology>
+</Simulation>

@@ -28,9 +28,6 @@ Tuesday 14th May (DRG)
       * [functions & modules](python/2_functions_and_modules.md)
       * [documenting Code](python/3_documenting_code.md)
     * [Basic Principles of Object-Oriented Programming](python/4_object_orientation.md)
-    * Other Potentially useful stuff 
-      * [Python tutorial](https://docs.python.org/3/tutorial/index.html) (use as a reference, not an actual tutorial) 
-      * Already a python expert? Try some [Project Euler](https://projecteuler.net/) challenges.    
 
 * 11:30 coffee
 * 13:00 Lunch
@@ -47,17 +44,16 @@ Wednesday 15th May (DRG, JB, SH, AJB, DS, BW)
 * 12:30 Lunch
 * 13:30 Version Control 
     * [Part 1: Basic git - structure & commands](outlines/git-outline.md#git-and-version-control) - JB
-* 14:30 coffee
-* 14:45 Version Control 
+* 14:30 Version Control
     * [Part 2: Remote repos & GIT GUIs](outlines/git-outline.md#part-2) - JB
     * [Part 3: upload your game projects onto the TMCS-2019 github](version-control/git-exercise.md) - DRG
-* 15:45 coffee
-* 16:00 [Testing software and catching errors](testing/README.md) ([slides](testing/slides.pdf)) - JB/DRG
+* 16:00 coffee
+* 16:15 [Testing software and catching errors](testing/README.md) ([slides](testing/slides.pdf)) - JB/DRG
 * 17:00 Overview of the four hackathon projects
     * JB - Brownian motion on a 2d graph with pyGlet graphics ([slides](hackathon/drunk-simulator/drunk-simulator.pdf))
     * DS - Aesthetic style transfer using neural nets ([description](hackathon/style-transfer/style-transfer.md))
     * SH/RW/AJB - Interactive molecular dynamics in VR (iMD-VR) 
-      * RW/AJB - Code-your-own iMD-VR molecular simulations ([description](hackathon/imd-vr/becca.md))
+      * RW/AJB - Code-your-own iMD-VR molecular simulations ([slides](https://github.com/davidglo/TMCS-2019/blob/master/hackathon/imd-vr/Code-your-own%20iMD-VR%20molecular%20simulations-converted.pdf))
       * SH/AJB - Dimensionality reduction of iMD-VR data ([description](hackathon/dimensionality-reduction/dimensionality-reduction.md))
 * 17:45 Pub. Students should take this opportunity to organize themselves into their project groups
 
@@ -66,7 +62,7 @@ Thursday 16th May (DRG, JB, SH, AJB, DS, BW)
 * 10:00 - 18:00 hackathon
     * group 1 led by JB - [description](hackathon/drunk-simulator/drunk-simulator.md) 
     * group 2 led by DS 
-    * group 3 led by RW/AJB - repo/info 
+    * group 3 led by RW/AJB - [description](https://github.com/davidglo/TMCS-2019/blob/master/hackathon/imd-vr/instructions.md)
     * group 4 led by SH/AJB - [description](hackathon/dimensionality-reduction/dimensionality-reduction.md)
 * 18:00 - 19:00 pizza/wine party!
 

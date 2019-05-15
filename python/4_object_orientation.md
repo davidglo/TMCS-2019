@@ -15,7 +15,7 @@ This will turn into grey an entry which we had intended to be 'blue'. Or they co
 
 where now they've assigned the tag 'blue' to a color that is actually red! The problem in both of these examples is that the "colors" dictionary is visible, and anybody can change its value whenever they want. This might seem like a good thing, but in complex code projects, this is the sort of thing that can lead to hard-to-find and extremely subtle bugs that can drive you mad.
  
-Another problem with modules and functions is that they sometimes don't reflect the structure of our code very well. For example, in our [drawTwoTriangles-refactor2.py](https://github.com/davidglo/boot-camps/blob/2017-TMCS-software/drawTwoTriangles-refactor2.py) code, there's a sense in which the triangles don't really "exist" as enduring data structures. At each pyglet update, we simply call the function to generate some random coordinates, and then formulate a vertex list which is then drawn. In fact, each of our trianges are characterized by some properties. For example, any given object which has the properties of an equilateral triangle should be minimally characterized by:
+Another problem with modules and functions is that they sometimes don't reflect the structure of our code very well. For example, in our [drawTwoTriangles-refactor2.py](2b/drawTwoTriangles-refactor2.py) code, there's a sense in which the triangles don't really "exist" as enduring data structures. At each pyglet update, we simply call the function to generate some random coordinates, and then formulate a vertex list which is then drawn. In fact, each of our trianges are characterized by some properties. For example, any given object which has the properties of an equilateral triangle should be minimally characterized by:
 * a color
 * an id (e.g., the 'first' or 'second' triangle; we could give them more exotic names if we wanted - maybe "hydrogenAtom" & "heliumAtom")
 * an x & y position
@@ -35,7 +35,7 @@ An "object" is a particular instantiation of a "class" definition. Sticking with
 
 Ok, enough philosophy for now. The idea of putting together member data and member functions which are important for certain classes of objects is called "Encapsulation". It's a key idea of object orientated programming, and refers to the practice of hiding the data in a Class, with the net result that only the functions which are defined as part of the Class can read or write (change) the data. Not only can this actually result in simpler to use and easier-to-read code which maps onto the problem we're actually trying to solve, but it also enforces practices that are much less likely to get abused by others (or ourselves in the future) when we're coding.
 
-For example, take a look the code [triangleClass-v1.py](https://github.com/davidglo/boot-camps/blob/2017-TMCS-software/triangleClass-v1.py) required to make a very basic "triangle" class:
+For example, take a look the code [triangleClass-v1.py](4/triangleClass.py) required to make a very basic "triangle" class:
 
     class triangleClass:
 
@@ -78,7 +78,7 @@ This piece of Python contains lots of new ideas. Before we explore them, feel fr
 
 "triangleClass", is a example of a Class. Classes are used to package up functions with associated data. As you can see in the help(), we can only see the functions defined in the class. It has several functions, `__init__` (always enclosed on either side by two underscores), which is used to construct a new Object of type triangleClass, and several "set" and "get" functions, each of which is used to either retreive or set triangleClass data members. As you can see, the first argument to each of these functions is "self". "self" is a special variable that is used by the Class to gain access to the data hidden within. 
 
-Lets look again at the source for [triangleClass-v1.py](https://github.com/davidglo/boot-camps/blob/2017-TMCS-software/triangleClass-v1.py)
+Lets look again at the source for [triangleClass-v1.py](4/triangleClass.py)
 
     class triangleClass:
 
@@ -121,7 +121,7 @@ The constructor takes as input the data which we pass in, and then defines varia
 
 An instantiation of a particular class is called an object. We can construct as many instances (objects) of a class as we want, and each will have its own "self" and its own set of hidden variables. 
 
-So, how do we use the triangleClass in practice - e.g., in our [drawTwoTriangles-refactor2.py](https://github.com/davidglo/boot-camps/blob/2017-TMCS-software/drawTwoTriangles-refactor2.py) code? Let's have a look
+So, how do we use the triangleClass in practice - e.g., in our [drawTwoTriangles-refactor2.py](2b/drawTwoTriangles-refactor2.py) code? Let's have a look
 
 First we must make drawTwoTriangles-refactor2.py aware of our class definition:
 
@@ -134,8 +134,8 @@ Immediately afterward, we add the following to initialize two triangle objects:
     triangle2 = triangleClass('triangle2', 'hotpink', 0, 0, 20)
     
 This is key - it's where we "instantiate" an object from a class defintion. We're saying: 
-*"initialize an object triangle1 from class triangleClass, using 'triangle1', 'blue',    0, 0, 20 as arguments to the triangleClass constructor"
-*"initialize an object triangle2 from class triangleClass, using 'triangle2', 'hotpink', 0, 0, 20 as arguments to the triangleClass constructor"
+* "initialize an object triangle1 from class triangleClass, using 'triangle1', 'blue',    0, 0, 20 as arguments to the triangleClass constructor"
+* "initialize an object triangle2 from class triangleClass, using 'triangle2', 'hotpink', 0, 0, 20 as arguments to the triangleClass constructor"
 
 It's worth putting breakpoints at these lines, and the hovering over 'triangle1' and 'triangle2' after we've instantiated them as objects. this will give you a great feel for how PyCharm thinks about objects - i.e., as a collection of data.
 
