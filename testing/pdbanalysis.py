@@ -6,7 +6,7 @@ to calculate some geometric properties.
 """
 
 import numpy as np
-from periodictable import elements
+import periodictable
 
 
 def read_pdb_atoms(lines):
@@ -36,8 +36,10 @@ def read_pdb_atoms(lines):
 def get_elements_from_names(names):
     """
     Build an array of element symbols from an array of atom names.
+
+    Warning! The heuristic does not follow the PDB standard!
     """
-    return np.array([name[:2].strip() for name in names])
+    return np.array([name.strip()[0] for name in names])
 
 
 def get_masses_from_elements(symbols):
@@ -46,7 +48,10 @@ def get_masses_from_elements(symbols):
 
     The masses are expressed in atomic mass unit.
     """
-    return np.array([elements.symbol(symbol).mass for symbol in symbols])
+    return np.array([
+        periodictable.elements.symbol(symbol).mass
+        for symbol in symbols
+    ])
 
 
 def compute_center_of_mass(positions, masses):
@@ -105,5 +110,12 @@ def compute_end_to_end_distance(positions, names):
 
 
 if __name__ == '__main__':
-    pdb_path = '1BTA.pdb'
-    
+    pdb_path = '1bta.pdb'
+    with open(pdb_path) as infile:
+        positions, names = read_pdb_atoms(infile)
+    elements = get_elements_from_names(names)
+    masses = get_masses_from_elements(elements)
+    center_of_mass = compute_center_of_mass(positions, masses)
+    print('Center of mass:', center_of_mass)
+    end_to_end_distance = compute_end_to_end_distance(positions, names)
+    print('End to end distance is {:2f} Å'.format(end_to_end_distance))
