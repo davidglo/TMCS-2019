@@ -81,7 +81,7 @@ def compute_euclidean_distance(position_a, position_b):
     return np.sqrt(
         (position_b[0] - position_a[0]) ** 2
         + (position_b[1] - position_a[1]) ** 2
-        + (position_b[1] - position_a[1]) ** 2
+        + (position_b[2] - position_a[2]) ** 2
     )
 
 
@@ -92,11 +92,7 @@ def get_carbon_alpha_index(names):
     The name of a carbon alpha is expected to be " CA " (mind the spaces) as
     it should be in a PDB file.
     """
-    indices = []
-    for index, name in enumerate(names):
-        if name == ' CA ':
-            indices.append(index)
-    return np.array(indices)
+    return np.where(names == ' CA ')
 
 
 def compute_end_to_end_distance(positions, names):
