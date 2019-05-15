@@ -11,7 +11,7 @@ I usually like to keep all of my GIT projects in a single directory called GIT-r
 The steps which you are going to follow are essentially these:
 1. you will want to go the TMCS-2019 Github repository and fork the repo, which creates a separate version that you can now work on.
 2. then you are going to clone your fork onto your own machine, which will let you inspect its contents. You will see that it contains a folder called studentProjects.
-3. Navigate to the studentProjects directory a folder whose title is firstnameSurname (so for example, I would name this folder davidGlowacki). Place within the firstnameSurname folder all of the files required to run your game from pyCHARM. 
+3. Navigate to the studentProjects directory a folder whose title is firstnameSurname (so for example, I would name this folder davidGlowacki). Place within the firstnameSurname folder all of the files required to run your game from pyCHARM. Be sure to include a README.md file which includes instructions that people unfamiliar with your game need in order to run it. 
 4. Once you've placed the files in the directory, you need to tell Git that it should consider these new files to be part of the repository. From within the firstnameSurname directory, you can do this with the command
 
     $ git add --all
