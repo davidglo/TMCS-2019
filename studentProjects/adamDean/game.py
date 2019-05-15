@@ -10,7 +10,7 @@ import colors
 class graphicsWindow(pyglet.window.Window):
     def __init__(self):
         super(graphicsWindow, self).__init__()  # constructor for graphicsWindow class
-        self.center = [self.width / 2 + randint(-20, 20), self.height / 2 + randint(-20, 20),]  # initialize the centre of the triangle
+        self.center = [self.width / 2 + randint(-20, 20), self.height / 2 + randint(-20, 20)]  # initialize the centre of the triangle
         self.xvelocity = 0
         self.yvelocity = 0
         while(self.xvelocity < 0.5):
