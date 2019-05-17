@@ -93,7 +93,7 @@ def get_carbon_alpha_index(names):
     it should be in a PDB file.
     """
 
-    return np.where(names == " CA ")
+    return np.where(names == ' CA ')
 
 
 def compute_end_to_end_distance(positions, names):
