@@ -92,7 +92,6 @@ def get_carbon_alpha_index(names):
     The name of a carbon alpha is expected to be " CA " (mind the spaces) as
     it should be in a PDB file.
     """
-
     return np.where(names == ' CA ')
 
 
