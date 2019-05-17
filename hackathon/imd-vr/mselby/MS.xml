@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Simulation Name="3NSS">
+  <SystemProperties>
+    <SimulationBoundary SimulationBox="20,20,20" PeriodicBoundary="true"/>
+    <Thermostat Type="BerendsenThermostat" EquilibriumTemperature="300" BerendsenCoupling="0.008" />
+    <Integrator Type="Verlet" TimeStep="0.001" />
+  </SystemProperties>
+  <Topology>
+    <Templates>
+      <Residue Name="3NSS">
+	  <File Centre="true" Path="^/Assets/Simulations/TMCS-2019/3NSS.pdb"/>
+       <ForceFields>
+          <InteractiveGaussianForceField GradientScaleFactor="500" />
+          <OpenMMForceField SystemFile="^/Assets/Simulatioms/TMCS-2019/">
+          </OpenMMForceField>
+        </ForceFields>
+      </Residue>
+    </Templates>
+    <Spawners>
+      <InstanceSpawner Name="3NSS" Template="3NSS" Count="1" />
+    </Spawners>
+  </Topology>
+</Simulation>
