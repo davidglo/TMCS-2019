@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Simulation Name="3NSS_OSE">
+  <SystemProperties>
+    <SimulationBoundary SimulationBox="20,20,20" PeriodicBoundary="true"/>
+    <Thermostat Type="BerendsenThermostat" EquilibriumTemperature="300" BerendsenCoupling="0.008" />
+    <Integrator Type="Verlet" TimeStep="0.001" />
+  </SystemProperties>
+  <Topology>
+    <Templates>
+      <Residue Name="3NSS_OSE">
+	  <File Centre="true" Path="^/3NSS_OSE_final.pdb"/>
+       <ForceFields>
+          <InteractiveGaussianForceField GradientScaleFactor="500" />
+          <OpenMMForceField SystemFile="^/3NSS_OSE_final.xml">
+          </OpenMMForceField>
+        </ForceFields>
+      </Residue>
+    </Templates>
+    <Spawners>
+      <InstanceSpawner Name="3NSS_OSE" Template="3NSS_OSE" Count="1" />
+    </Spawners>
+  </Topology>
+</Simulation>
